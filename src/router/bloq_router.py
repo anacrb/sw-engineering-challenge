@@ -4,8 +4,8 @@ from typing import List
 from sqlalchemy.orm import Session
 
 from entity.bloq import Bloq
-from exceptions import BloqNofFound, BloqError
-from persistence.repository.bloq import BloqRepository
+from exceptions.bloq_exceptions import BloqNofFound, BloqError
+from persistence.repository.bloq_repository import BloqRepository
 from router.dependencies import get_db
 from usecase.bloq_usecase import BloqUseCase
 

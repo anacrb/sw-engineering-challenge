@@ -3,7 +3,7 @@ from typing import List, Optional
 from sqlalchemy.orm import Session
 
 from entity.bloq import Bloq
-from exceptions import BloqAlreadyExists, FailedToCreatBloq
+from exceptions.bloq_exceptions import BloqAlreadyExists, FailedToCreatBloq
 from interface.bloq_interface import BloqRepositoryInterface
 from persistence.models.bloq_model import BloqModel
 

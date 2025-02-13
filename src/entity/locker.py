@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class LockerStatus(str, Enum):
@@ -9,6 +9,8 @@ class LockerStatus(str, Enum):
 
 
 class Locker(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     bloqId: str
     status: LockerStatus

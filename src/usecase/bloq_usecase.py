@@ -1,7 +1,7 @@
 from typing import List
 
 from entity.bloq import Bloq
-from exceptions import BloqNofFound
+from exceptions.bloq_exceptions import BloqNofFound
 from interface.bloq_interface import BloqRepositoryInterface
 
 

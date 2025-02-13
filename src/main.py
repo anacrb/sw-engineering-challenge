@@ -3,6 +3,7 @@ from fastapi import FastAPI
 
 from persistence.postgres_config import Base, engine
 from router.bloq_router import router as bloq
+from router.locker_router import router as locker
 
 
 def create_app() -> FastAPI:
@@ -12,6 +13,7 @@ def create_app() -> FastAPI:
     app = FastAPI(title="Bloqit with Use Cases & Postgres")
 
     app.include_router(bloq, prefix="/bloqs", tags=["Bloqs"])
+    app.include_router(locker, prefix="/lockers", tags=["Lockers"])
 
     return app
 
