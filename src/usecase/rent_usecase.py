@@ -39,7 +39,7 @@ class RentUseCase:
             raise RentNotFound(rent_id)
 
         if rent.status not in (RentStatus.CREATED, RentStatus.WAITING_DROPOFF):
-            raise InvalidStatus(rent.status, f"{rent.CREATED} or {RentStatus.WAITING_DROPOFF}")
+            raise InvalidStatus(rent.status, f"{RentStatus.CREATED} or {RentStatus.WAITING_DROPOFF}")
 
         # Update rent
         rent.status = RentStatus.WAITING_PICKUP
