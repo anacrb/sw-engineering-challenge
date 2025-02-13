@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from persistence.postgres_config import Base, engine
 from router.bloq_router import router as bloq
 from router.locker_router import router as locker
+from router.rent_router import router as rent
 
 
 def create_app() -> FastAPI:
@@ -14,6 +15,7 @@ def create_app() -> FastAPI:
 
     app.include_router(bloq, prefix="/bloqs", tags=["Bloqs"])
     app.include_router(locker, prefix="/lockers", tags=["Lockers"])
+    app.include_router(rent, prefix="/rents", tags=["Rents"])
 
     return app
 

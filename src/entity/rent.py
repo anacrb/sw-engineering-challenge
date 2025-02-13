@@ -2,7 +2,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class RentStatus(str, Enum):
@@ -21,6 +21,8 @@ class RentSize(str, Enum):
 
 
 class Rent(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     lockerId: str
     weight: float
